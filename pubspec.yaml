@@ -46,6 +46,8 @@ dependencies:
   flutter_local_notifications:
   awesome_notifications_core: ^0.8.0  # required
   awesome_notifications: any  # optional
+  # flutter_number_captcha: ^0.0.8
+
 
 dev_dependencies:
   flutter_test:

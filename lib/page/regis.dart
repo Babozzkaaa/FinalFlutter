@@ -39,12 +39,16 @@ class _RegisState extends State<Regis> {
       });
 
       // Send email verification
-      await userCredential.user!.sendEmailVerification();
+      
 
-      print("User Created: ${userCredential.user!.email}");
-    } catch (e) {
-      print("Error during register: $e");
+     if (userCredential.user != null && !userCredential.user!.emailVerified) {
+      await userCredential.user!.sendEmailVerification();
     }
+
+    print("User Created: ${userCredential.user!.email}");
+  } catch (e) {
+    print("Error during register: $e");
+  }
   }
 
   bool agreePersonalData = true;
